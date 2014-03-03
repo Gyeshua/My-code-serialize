@@ -1,6 +1,11 @@
   
   serialized data ->a:2:{s:4:"name";a:2:{s:5:"fname";s:4:"shun";s:5:"lname";s:3:"vel";}s:10:"occupation";s:4:"shop";}
+  $serialze=a:2:{s:4:"name";a:2:{s:5:"fname";s:4:"shun";s:5:"lname";s:3:"vel";}s:10:"occupation";s:4:"shop";}
   
+  // Edit
+  $sel='a:2:{s:4:"name";a:2:{s:5:"fname";s:4:"shun";s:5:"lname";s:3:"vel";}s:10:"occupation";s:4:"shop";}';
+$ret=unserialize($sel);
+//Ends here
   Following am using to display in textbox but it does not work
   
   <div class="content-section">
@@ -10,7 +15,9 @@
 
                     <div class="right-side">
 
-
+//Edit 
+$father_occupation[name][fname]=$ret[name][fname];
+//Ends here
 <?php echo $form->textField($model,'father_occupation[name][fname]',array('size'=>26,'maxlength'=>100,'class'=>'text-box-1','placeholder'=>"First Name",'onkeyup'=>"this.value=this.value.replace(/[^A-Za-z ]/g,'');")); ?>
 
 <?php echo $form->error($model,'father_occupation[name][fname]'); ?>
